@@ -1,0 +1,156 @@
+package com.mycompany.firstproject;
+
+/**
+ *Name: Hezel Ann B. De Leon
+ * Section: Fidelity
+ * Year: 4th year
+ */
+import java.util.*;
+public class FirstProject {
+    public static void main(String[]args) {
+        Scanner input = new Scanner(System.in);
+       int total = 0;
+        int choice;
+        int again;     
+        int foods, snacks, drinks;
+        int loops = 0;
+        System.out.println("Welcome to my restaurant");
+               
+        do{ loops++;
+            System.out.println("Would you like to order?");
+            System.out.println("[1-Yes:2-No]");
+            System.out.print("->: ");
+            choice = input.nextInt();
+            
+            if(choice == 1){
+                System.out.println("Please choose your order to proceed");
+                System.out.println("""
+                                   [1-FOODS]
+                                   [2-DRINKS]
+                                   [3-SNACKS]""");
+                System.out.print("->: ");
+                int option = input.nextInt();
+                
+                
+                switch(option){
+                    case 1:{
+                        System.out.println("""
+                                           -------------------List of foods-------------------
+                                           NO. |\t|\tNAME OF FOOD  \t|\t|\tPRICE
+                                           ---------------------------------------------------
+                                           1.  |\t|\tChicken Curry \t|\t|\t150 php
+                                           2.  |\t|\tAfretada      \t|\t|\t100 php
+                                           3.  |\t|\tLetchon\t\t|\t|\t150 php
+                                           ---------------------------------------------------""");
+                        System.out.print("->: ");
+                                    foods = input.nextInt();
+                                    
+                       
+                        if(foods == 1){
+                            total +=  150;
+                           System.out.println("You Choose Chicken Curry");
+                            System.out.println("Price to be Pay: "+total);
+                           
+                        }
+                        else if(foods ==2){
+                            total += 100;
+                         System.out.println("You Choose Afretada");
+                            System.out.println("Price to be Pay: "+total);
+                        }
+                        else if(foods ==3){
+                            total += 150;
+                        System.out.println("You Choose Letchon");
+                            System.out.println("Price to be Pay: "+total);
+                        }
+                        else{
+                            System.out.println("Invalid input");
+                        }
+                        break;
+                        
+                    }
+                    case 2:{
+                        System.out.println("""
+                                           -------------------List of drinks-------------------
+                                           NO. |\t|\tNAME OF DRINKS  |\t|\tPRICE
+                                           ---------------------------------------------------
+                                           1.  |\t|\tCoca Cola \t|\t|\t50 php
+                                           2.  |\t|\tMilkTea     \t|\t|\t150 php
+                                           3.  |\t|\tShake\t\t|\t|\t100 php
+                                           ---------------------------------------------------""");
+                        System.out.print("->: ");
+                        drinks = input.nextInt();
+                        
+                        if(drinks == 1){
+                            total += 50;
+                         System.out.println("You Choose Coca Cola");
+                            System.out.println("Price to be Pay: "+total);
+                        }
+                        else if(drinks ==2){
+                            total += 150;
+                         System.out.println("You Choose Milk Tea");
+                            System.out.println("Price to be Pay: "+total);
+                        }
+                        else if(drinks ==3){
+                            total += 100;
+                          System.out.println("You Choose Shake");
+                            System.out.println("Price to be Pay: "+total);
+                        }
+                        else{
+                            System.out.println("Invalid input");
+                        }
+                        break;
+
+                    }
+                    case 3:{
+                        System.out.println("""
+                                           -------------------List of snacks-------------------
+                                           NO. |\t|\tNAME OF SNACKS  \t|\t|\tPRICE
+                                           ---------------------------------------------------
+                                           1.  |\t|\tBurger \t|\t|\t60 php
+                                           2.  |\t|\tPizza  \t|\t|\t130 php
+                                           3.  |\t|\tCookies\t\t|\t|\t50 php
+                                           ---------------------------------------------------""");
+                        System.out.print("->: ");
+                         snacks = input.nextInt();
+                        if(snacks == 1){
+                            total += 60;
+                        System.out.println("You Choose Burger");
+                           System.out.println("Price to be Pay: "+total);
+                        }
+                        else if(snacks ==2){
+                            total += 130;
+                         System.out.println("You Choose Pizza");
+                           System.out.println("Price to be Pay: "+total);
+                        }
+                        else if(snacks ==3){
+                            total += 50;
+                         System.out.println("You Choose Cookies");
+                            System.out.println("Price to be Pay: "+total);
+                        }
+                        else{
+                            System.out.println("Invalid input");
+                        }
+                        
+                        break;
+                    }
+                    default:{
+                        
+                    }
+                }
+                
+                again = 1;
+            }
+            else{
+                System.out.println("Invalid");
+                System.out.println("Total Payment is: "+total);
+                System.out.println("Enter your cash: ");
+                int cash = input.nextInt();
+                int change = cash - total;
+                System.out.println("Your change is: "+change);
+                again = 0;
+            }
+            
+            
+        }while(again == 1);
+      }
+    }

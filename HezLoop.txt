@@ -1,0 +1,43 @@
+package hez;
+
+/**
+ *Name: Hezel Ann B. De Leon
+ * Section: Fidelity
+ * Year: 4th Year
+ */
+import java.util.Scanner;
+public class Hez {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+        int loop = 0;
+        int grade;
+        int response;
+        int total = 0;
+        int average;
+        
+        do{
+            System.out.print("Do you want to enter grade? (1-yes:2-no)");
+           response = sc.nextInt();
+            if(response==1){
+                loop++;
+                System.out.println("Enter a Score: ");
+                grade = sc.nextInt();
+                total += grade;
+             response = 1;
+            }
+            else{
+                response = 0;
+                 average = total / loop;
+                System.out.println("Score Average: "+average);
+               
+                
+            }
+                        
+        }while(response==1);
+    }
+    
+}
